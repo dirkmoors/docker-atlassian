@@ -3,9 +3,11 @@
 Docker images for Atlassian's Jira, Bamboo and Crowd
 
 ## Jira
-### Build
 ```
 $ cd jira
+```
+### Build
+```
 $ make build
 ```
 ### Run
@@ -14,9 +16,11 @@ $ make serve
 ```
 
 ## Bamboo
-### Build
 ```
 $ cd bamboo
+```
+### Build
+```
 $ make build
 ```
 ### Run
