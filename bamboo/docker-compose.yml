@@ -1,0 +1,27 @@
+version: "2"
+services:
+  bamboo:
+    image: ditchitall/atlassian-bamboo:5.14.1
+    build: .
+    ports:
+      - "8085:8085"
+    env_file: .env
+    environment:
+      - WAIT_TCP=db:5432
+    depends_on:
+      - db
+    volumes:
+      - "/tmp/atlassian/bamboo/data:/data/bamboo"
+  db:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_PASSWORD=bamboo
+      - POSTGRES_USER=bamboo
+  dbadmin:
+    image: fenglc/pgadmin4
+    environment:
+      - WAIT_TCP=db:5432
+    depends_on:
+      - db
+    ports:
+      - "5050:5050"

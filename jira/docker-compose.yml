@@ -1,0 +1,27 @@
+version: "2"
+services:
+  jira:
+    image: ditchitall/atlassian-jira-software:7.2.4
+    build: .
+    ports:
+      - "8080:8080"
+    env_file: .env
+    environment:
+      - WAIT_TCP=db:5432
+    depends_on:
+      - db
+    volumes:
+      - "/tmp/atlassian/jira/data:/data/jira"
+  db:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_PASSWORD=jira
+      - POSTGRES_USER=jira
+  dbadmin:
+    image: fenglc/pgadmin4
+    environment:
+      - WAIT_TCP=db:5432
+    depends_on:
+      - db
+    ports:
+      - "5050:5050"
