@@ -9,7 +9,7 @@ dependencies:
         - docker login -e ${DOCKER_EMAIL} -u ${DOCKER_USER} -p ${DOCKER_PASS}
     override:
         # Install python dev
-        - sudo apt-get install python-dev
+        - sudo apt-get update && sudo apt-get install python-dev
         # Install Docker Compose
         - sudo pip install --upgrade docker-compose
 test:
