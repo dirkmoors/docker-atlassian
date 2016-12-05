@@ -1,0 +1,27 @@
+version: "2"
+services:
+  crowd:
+    image: ditchitall/atlassian-crowd:2.10.1
+    build: .
+    ports:
+      - "8095:8095"
+    env_file: .env
+    environment:
+      - WAIT_TCP=db:5432
+    depends_on:
+      - db
+    volumes:
+      - "/tmp/atlassian/crowd/data:/data/crowd"
+  db:
+    image: postgres:9.5
+    environment:
+      - POSTGRES_PASSWORD=crowd
+      - POSTGRES_USER=crowd
+  dbadmin:
+    image: fenglc/pgadmin4
+    environment:
+      - WAIT_TCP=db:5432
+    depends_on:
+      - db
+    ports:
+      - "5050:5050"
