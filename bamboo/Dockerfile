@@ -2,7 +2,7 @@ FROM ditchitall/java:8
 
 # Configuration variables.
 ENV BAMBOO_INSTALL=/opt/atlassian/bamboo \
-    BAMBOO_HOME=/data/jira \
+    BAMBOO_HOME=/data/bamboo \
     BAMBOO_VERSION=5.14.1 \
     BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh
 
