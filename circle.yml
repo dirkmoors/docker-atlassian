@@ -11,7 +11,7 @@ dependencies:
         # Install python dev
         - sudo apt-get update && sudo apt-get install python-dev
         # Install Docker Compose
-        - sudo pip install --upgrade docker-compose
+        - sudo pip install --upgrade docker-compose==1.8.1
 test:
     override:
         # Build images

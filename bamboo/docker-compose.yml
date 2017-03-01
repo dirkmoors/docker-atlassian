@@ -1,7 +1,7 @@
 version: "2"
 services:
   bamboo:
-    image: ditchitall/atlassian-bamboo:5.14.1
+    image: ditchitall/atlassian-bamboo:5.15.0.1
     build: .
     ports:
       - "8085:8085"
