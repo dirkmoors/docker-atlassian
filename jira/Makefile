@@ -3,7 +3,7 @@
 ###################################################
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-JIRA_VERSION := 7.2.4
+JIRA_VERSION := 7.3.1
 JIRA_INSTALL := /opt/atlassian/jira
 JIRA_HOME := /data/jira
 

@@ -3,7 +3,7 @@ FROM ditchitall/java:8
 # Configuration variables.
 ENV CROWD_INSTALL=/opt/atlassian/crowd \
     CROWD_HOME=/data/crowd \
-    CROWD_VERSION=2.10.1 \
+    CROWD_VERSION=2.11.0 \
     BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh
 
 # Install Atlassian Crowd and helper tools and setup initial home
