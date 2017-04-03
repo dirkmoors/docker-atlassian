@@ -3,7 +3,7 @@ FROM ditchitall/java:8
 # Configuration variables.
 ENV JIRA_INSTALL=/opt/atlassian/jira \
     JIRA_HOME=/data/jira \
-    JIRA_VERSION=7.3.1 \
+    JIRA_VERSION=7.3.3 \
     BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh
 
 # Install Atlassian JIRA and helper tools and setup initial home

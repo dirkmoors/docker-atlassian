@@ -3,7 +3,7 @@ FROM ditchitall/java:8
 # Configuration variables.
 ENV BAMBOO_INSTALL=/opt/atlassian/bamboo \
     BAMBOO_HOME=/data/bamboo \
-    BAMBOO_VERSION=5.15.0.1 \
+    BAMBOO_VERSION=5.15.5 \
     BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh
 
 # Install Atlassian Bamboo and helper tools and setup initial home
