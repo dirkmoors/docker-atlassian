@@ -3,7 +3,7 @@
 ###################################################
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-CROWD_VERSION := 2.11.0
+CROWD_VERSION := 2.11.2
 CROWD_INSTALL := /opt/atlassian/crowd
 CROWD_HOME := /data/crowd
 
