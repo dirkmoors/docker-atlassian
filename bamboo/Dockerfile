@@ -3,8 +3,9 @@ FROM ditchitall/java:8
 # Configuration variables.
 ENV BAMBOO_INSTALL=/opt/atlassian/bamboo \
     BAMBOO_HOME=/data/bamboo \
-    BAMBOO_VERSION=5.15.5 \
-    BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh
+    BAMBOO_VERSION=6.3.0 \
+    BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh \
+    MYSQL_CONNECTOR_VERSION=5.1.45
 
 # Install Atlassian Bamboo and helper tools and setup initial home
 # directory structure.
@@ -15,7 +16,7 @@ RUN set -x \
     && mkdir -p               "${BAMBOO_HOME}/lib" \
     && mkdir -p               "${BAMBOO_INSTALL}" \
     && curl -Ls               "https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-${BAMBOO_VERSION}.tar.gz" | tar -zx --directory  "${BAMBOO_INSTALL}" --strip-components=1 --no-same-owner \
-    && curl -Ls                "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.38.tar.gz" | tar -xz --directory "${BAMBOO_INSTALL}/lib" --strip-components=1 --no-same-owner "mysql-connector-java-5.1.38/mysql-connector-java-5.1.38-bin.jar" \
+    && curl -Ls                "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz" | tar -xz --directory "${BAMBOO_INSTALL}/lib" --strip-components=1 --no-same-owner "mysql-connector-java-${MYSQL_CONNECTOR_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}-bin.jar" \
     && sed --in-place         's/^# umask 0027$/umask 0027/g' "${BAMBOO_INSTALL}/bin/setenv.sh" \
     && xmlstarlet             ed --inplace \
         --delete              "Server/Service/Engine/Host/@xmlValidation" \
