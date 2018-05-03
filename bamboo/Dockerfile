@@ -3,7 +3,7 @@ FROM ditchitall/java:8
 # Configuration variables.
 ENV BAMBOO_INSTALL=/opt/atlassian/bamboo \
     BAMBOO_HOME=/data/bamboo \
-    BAMBOO_VERSION=6.3.0 \
+    BAMBOO_VERSION=6.5.0 \
     BASE_ENTRYPOINT=/usr/local/bin/entrypoint.sh \
     MYSQL_CONNECTOR_VERSION=5.1.45
 

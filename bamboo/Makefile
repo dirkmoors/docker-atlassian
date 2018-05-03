@@ -3,7 +3,7 @@
 ###################################################
 ROOT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-BAMBOO_VERSION := 6.3.0
+BAMBOO_VERSION := 6.5.0
 BAMBOO_INSTALL := /opt/atlassian/bamboo
 BAMBOO_HOME := /data/bamboo
 
